@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOVE ME, DON'T LEAVE ME SELF-ASSESSMENTS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>LOVE ME, DON'T LEAVE ME SELF-ASSESSMENTS</h1>
+    <img src="loveme.jpg" alt="Love Me, Don't Leave Me book cover" />
+    <p style="text-align: start; font-size: 1.3em; color: rgb(238, 102, 5);">
+      This journey requires work. At times it will feel challenging, especially when you are asked to examine unhealthy thoughts, behaviors, and emotions. The exercises contained in the book are designed to help you get closer to the healthy relationships that you desire. You will need to complete the exercises in this online journal that will track your progress.
+    </p>
+    <div id="name-section" style="text-align: start; color: #fa072f; margin-bottom: 30px;">
+      <label for="name">Enter your full name:</label>
+      <br />
+      <input type="text" id="name" required />
+      <br />
+      <button onclick="checkNameAndShowAssessment();" style="margin-top: 10px">
+        Proceed
+      </button>
+      <p id="name-message" style="color: #4caf50; font-style: italic; margin-top: 10px"></p>
+    </div>
+    <div id="assessment">
+      <!-- Abandonment Core Belief Self-Assessment -->
+      <h2>Abandonment Core Belief Self-Assessment</h2>
+      <p style="text-align: start; font-size: 1.2em; color: #555;">
+        As discussed in the book, the abandonment core belief is a perceived instability or unreliability of those on whom you relied for support and connection. It involves the belief that the significant person or people in your life will not be able to provide emotional support, connection, or protection because they are emotionally unstable and unpredictable, unreliable or erratically present, and/or will die or abandon you for someone else.
+        <br /><br />
+        Rate the following statements using the scale below:
+      </p>
+      <p style="text-align: start; font-size: 1.2em; color: #0167ec;">
+        1 = completely untrue of me<br />
+        2 = mostly untrue of me<br />
+        3 = slightly more true than untrue of me<br />
+        4 = moderately true of me<br />
+        5 = mostly true of me<br />
+        6 = describes me perfectly
+      </p>
+      <form oninput="calculateAbandonmentScore();">
+        <div class="question">
+          <label>1. I worry a lot that the people I love will die or leave me:</label>
+          <br /><br />
+          <input type="radio" name="ab1" value="1" /> 1
+          <input type="radio" name="ab1" value="2" /> 2
+          <input type="radio" name="ab1" value="3" /> 3
+          <input type="radio" name="ab1" value="4" /> 4
+          <input type="radio" name="ab1" value="5" /> 5
+          <input type="radio" name="ab1" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >2. I cling to people because I am afraid they will leave me</label
+          ><br /><br />
+          <input type="radio" name="ab2" value="1" /> 1
+          <input type="radio" name="ab2" value="2" /> 2
+          <input type="radio" name="ab2" value="3" /> 3
+          <input type="radio" name="ab2" value="4" /> 4
+          <input type="radio" name="ab2" value="5" /> 5
+          <input type="radio" name="ab2" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>3. I do not have a stable base support:</label><br /><br />
+          <input type="radio" name="ab3" value="1" /> 1
+          <input type="radio" name="ab3" value="2" /> 2
+          <input type="radio" name="ab3" value="3" /> 3
+          <input type="radio" name="ab3" value="4" /> 4
+          <input type="radio" name="ab3" value="5" /> 5
+          <input type="radio" name="ab3" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >4. I keep falling in love with the people who cannot be there for
+            me in a committed way:</label
+          ><br /><br /><br>
+          <input type="radio" name="ab4" value="1" /> 1
+          <input type="radio" name="ab4" value="2" /> 2
+          <input type="radio" name="ab4" value="3" /> 3
+          <input type="radio" name="ab4" value="4" /> 4
+          <input type="radio" name="ab4" value="5" /> 5
+          <input type="radio" name="ab4" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>5. People have always come and gone in my life:</label
+          ><br /><br />
+          <input type="radio" name="ab5" value="1" /> 1
+          <input type="radio" name="ab5" value="2" /> 2
+          <input type="radio" name="ab5" value="3" /> 3
+          <input type="radio" name="ab5" value="4" /> 4
+          <input type="radio" name="ab5" value="5" /> 5
+          <input type="radio" name="ab5" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>6. I get desperate when someone I love pulls away:</label
+          ><br /><br />
+          <input type="radio" name="ab6" value="1" /> 1
+          <input type="radio" name="ab6" value="2" /> 2
+          <input type="radio" name="ab6" value="3" /> 3
+          <input type="radio" name="ab6" value="4" /> 4
+          <input type="radio" name="ab6" value="5" /> 5
+          <input type="radio" name="ab6" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >7. I get obsessed with the idea that my lovers will leave me that I
+            drive them away:</label
+          ><br /><br />
+          <input type="radio" name="ab7" value="1" /> 1
+          <input type="radio" name="ab7" value="2" /> 2
+          <input type="radio" name="ab7" value="3" /> 3
+          <input type="radio" name="ab7" value="4" /> 4
+          <input type="radio" name="ab7" value="5" /> 5
+          <input type="radio" name="ab7" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >8. The people closest to me are unpredictable. One minute they are
+            there for me, and the next minute they are gone:</label
+          ><br /><br />
+          <input type="radio" name="ab8" value="1" /> 1
+          <input type="radio" name="ab8" value="2" /> 2
+          <input type="radio" name="ab8" value="3" /> 3
+          <input type="radio" name="ab8" value="4" /> 4
+          <input type="radio" name="ab8" value="5" /> 5
+          <input type="radio" name="ab8" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>9. I need other people too much:</label><br /><br />
+          <input type="radio" name="ab9" value="1" /> 1
+          <input type="radio" name="ab9" value="2" /> 2
+          <input type="radio" name="ab9" value="3" /> 3
+          <input type="radio" name="ab9" value="4" /> 4
+          <input type="radio" name="ab9" value="5" /> 5
+          <input type="radio" name="ab9" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>10. In the end, I will be there alone:</label><br /><br />
+          <input type="radio" name="ab10" value="1" /> 1
+          <input type="radio" name="ab10" value="2" /> 2
+          <input type="radio" name="ab10" value="3" /> 3
+          <input type="radio" name="ab10" value="4" /> 4
+          <input type="radio" name="ab10" value="5" /> 5
+          <input type="radio" name="ab10" value="6" /> 6
+        </div>
+      </form>
+      <div class="result" id="abandonment-result"></div>
+
+      <h2>Mistrust and Abuse Core Belief Self-Assessment</h2>
+      <p style="text-align: start; font-size: 1.2em; color: #555">
+        The mistrust and abuse core belief is one of the four common
+        coconspirators. If you grew up in an environment in which you didn't
+        trust the person or people close to you, you didn't feel safe, and/or
+        you were physically, verbally, emotionally, or sexually abused, then you
+        probably have a mistrust and abuse core belief.
+        <br /><br />
+        Rate the following statements using the scale below:
+        <br />
+      </p>
+
+      <p style="text-align: start; font-size: 1em; color: #0167ec">
+        1 = completely untrue of me
+        <br />
+        2 = mostly untrue of me
+        <br />
+        3 = slightly more true than untrue of me
+        <br />
+        4 = moderately true of me
+        <br />
+        5 = mostly true of me
+        <br />
+        6 = describes me perfectly
+      </p>
+      <form oninput="calculateMistrustScore();">
+        <div class="question">
+          <label>1. I expect people to hurt me or use me:</label><br /><br>
+          <input type="radio" name="mq1" value="1" /> 1
+          <input type="radio" name="mq1" value="2" /> 2
+          <input type="radio" name="mq1" value="3" /> 3
+          <input type="radio" name="mq1" value="4" /> 4
+          <input type="radio" name="mq1" value="5" /> 5
+          <input type="radio" name="mq1" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>2. Throughout my life people close to me have abused me:</label><br><br>
+          <input type="radio" name="mq2" value="1" /> 1
+          <input type="radio" name="mq2" value="2" /> 2
+          <input type="radio" name="mq2" value="3" /> 3
+          <input type="radio" name="mq2" value="4" /> 4
+          <input type="radio" name="mq2" value="5" /> 5
+          <input type="radio" name="mq2" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>3. It is only a matter of time before the people I love will betray me:</label><br><br>
+          <input type="radio" name="mq3" value="1" /> 1
+          <input type="radio" name="mq3" value="2" /> 2
+          <input type="radio" name="mq3" value="3" /> 3
+          <input type="radio" name="mq3" value="4" /> 4
+          <input type="radio" name="mq3" value="5" /> 5
+          <input type="radio" name="mq3" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>4. I have to protect myself and stay on my guard:</label><br><br>
+          <input type="radio" name="mq4" value="1" /> 1
+          <input type="radio" name="mq4" value="2" /> 2
+          <input type="radio" name="mq4" value="3" /> 3
+          <input type="radio" name="mq4" value="4" /> 4
+          <input type="radio" name="mq4" value="5" /> 5
+          <input type="radio" name="mq4" value="6" /> 6
+        </div>
+        <div class="question">
+         <label>5. If I am not careful, people will take advantage of me:</label><br><br>
+         <input type="radio" name="mq5" value="1" /> 1
+         <input type="radio" name="mq5" value="2" /> 2
+         <input type="radio" name="mq5" value="3" /> 3
+         <input type="radio" name="mq5" value="4" /> 4
+         <input type="radio" name="mq5" value="5" /> 5
+         <input type="radio" name="mq5" value="6" /> 6
+       </div>
+       <div class="question">
+        <label>6. I set up tests for people to see if they are really on my side:</label><br><br>
+        <input type="radio" name="mq6" value="1" /> 1
+        <input type="radio" name="mq6" value="2" /> 2
+        <input type="radio" name="mq6" value="3" /> 3
+        <input type="radio" name="mq6" value="4" /> 4
+        <input type="radio" name="mq6" value="5" /> 5
+        <input type="radio" name="mq6" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>7. I try to hurt people before they hurt me:</label><br><br>
+        <input type="radio" name="mq7" value="1" /> 1
+        <input type="radio" name="mq7" value="2" /> 2
+        <input type="radio" name="mq7" value="3" /> 3
+        <input type="radio" name="mq7" value="4" /> 4
+        <input type="radio" name="mq7" value="5" /> 5
+        <input type="radio" name="mq7" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>8. I am afraid to let people get close to me because I expect them to hurt me:</label><br><br>
+        <input type="radio" name="mq8" value="1" /> 1
+        <input type="radio" name="mq8" value="2" /> 2
+        <input type="radio" name="mq8" value="3" /> 3
+        <input type="radio" name="mq8" value="4" /> 4
+        <input type="radio" name="mq8" value="5" /> 5
+        <input type="radio" name="mq8" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>9. I am angry about what people have  done to me:</label><br><br>
+        <input type="radio" name="mq9" value="1" /> 1
+        <input type="radio" name="mq9" value="2" /> 2
+        <input type="radio" name="mq9" value="3" /> 3
+        <input type="radio" name="mq9" value="4" /> 4
+        <input type="radio" name="mq9" value="5" /> 5
+        <input type="radio" name="mq9" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>10. I have been physically, verbally, or sexually abused by people I should have been able to trust:</label><br><br>
+        <input type="radio" name="mq10" value="1" /> 1
+        <input type="radio" name="mq10" value="2" /> 2
+        <input type="radio" name="mq10" value="3" /> 3
+        <input type="radio" name="mq10" value="4" /> 4
+        <input type="radio" name="mq10" value="5" /> 5
+        <input type="radio" name="mq10" value="6" /> 6
+      </div>
+
+      </form>
+      <div class="result" id="mistrust-result"></div>
+
+      <h2>Emotional Deprivation Core Belief Self-Assessment</h2>
+      <p style="text-align: start; font-size: 1.2em; color: #555;">
+          Emotional deprivation is another partner in crime with the abandonment core belief. 
+          <br>
+          If you grew up in an environment where you didn't receive emotional support, attention, affection, guidance, and understanding, then emotional deprivation is probably one of your core beliefs.
+          <br><br>
+        Rate the following statements using the scale below:
+        <br />
+      </p>
+
+      <p style="text-align: start; font-size: 1.2em; color: #0167ec">
+        1 = completely untrue of me
+        <br />
+        2 = mostly untrue of me
+        <br />
+        3 = slightly more true than untrue of me
+        <br />
+        4 = moderately true of me
+        <br />
+        5 = mostly true of me
+        <br />
+        6 = describes me perfectly
+      </p>
+      <form oninput="calculateEmotionalDeprivationScore();">
+        <div class="question">
+          <label>1. I need more love than I get:</label><br><br>
+          <input type="radio" name="ed1" value="1" /> 1
+          <input type="radio" name="ed1" value="2" /> 2
+          <input type="radio" name="ed1" value="3" /> 3
+          <input type="radio" name="ed1" value="4" /> 4
+          <input type="radio" name="ed1" value="5" /> 5
+          <input type="radio" name="ed1" value="6" /> 6
+        </div>
+        <div class="question">
+            <label>2. No one really understands me:</label><br><br>
+            <input type="radio" name="ed2" value="1" /> 1
+            <input type="radio" name="ed2" value="2" /> 2
+            <input type="radio" name="ed2" value="3" /> 3
+            <input type="radio" name="ed2" value="4" /> 4
+            <input type="radio" name="ed2" value="5" /> 5
+            <input type="radio" name="ed2" value="6" /> 6
+          </div>  
+        <div class="question">
+            <label>3. I am often attracted to cold partners who can't meet my needs:</label><br><br>
+            <input type="radio" name="ed3" value="1" /> 1
+            <input type="radio" name="ed3" value="2" /> 2
+            <input type="radio" name="ed3" value="3" /> 3
+            <input type="radio" name="ed3" value="4" /> 4
+            <input type="radio" name="ed3" value="5" /> 5
+            <input type="radio" name="ed3" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>4. I feel disconnected, even from the people who are closest to me:</label><br><br>
+            <input type="radio" name="ed4" value="1" /> 1
+            <input type="radio" name="ed4" value="2" /> 2
+            <input type="radio" name="ed4" value="3" /> 3
+            <input type="radio" name="ed4" value="4" /> 4
+            <input type="radio" name="ed4" value="5" /> 5
+            <input type="radio" name="ed4" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>5. I have not had one special person I love who wants to share himself with me and cares deeply about what happens to me:</label><br><br>
+            <input type="radio" name="ed5" value="1" /> 1
+            <input type="radio" name="ed5" value="2" /> 2
+            <input type="radio" name="ed5" value="3" /> 3
+            <input type="radio" name="ed5" value="4" /> 4
+            <input type="radio" name="ed5" value="5" /> 5
+            <input type="radio" name="ed5" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>6. No one is there to give me warmth, holding, and affection:</label><br><br>
+            <input type="radio" name="ed6" value="1" /> 1
+            <input type="radio" name="ed6" value="2" /> 2
+            <input type="radio" name="ed6" value="3" /> 3
+            <input type="radio" name="ed6" value="4" /> 4
+            <input type="radio" name="ed6" value="5" /> 5
+            <input type="radio" name="ed6" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>7. I do not have someone who really listens and i tuned in to my true needs and feelings:</label><br><br>
+            <input type="radio" name="ed7" value="1" /> 1
+            <input type="radio" name="ed7" value="2" /> 2
+            <input type="radio" name="ed7" value="3" /> 3
+            <input type="radio" name="ed7" value="4" /> 4
+            <input type="radio" name="ed7" value="5" /> 5
+            <input type="radio" name="ed7" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>8. It is hard for me to let people guide or protect me, even though it is what I want inside:</label><br><br>
+            <input type="radio" name="ed8" value="1" /> 1
+            <input type="radio" name="ed8" value="2" /> 2
+            <input type="radio" name="ed8" value="3" /> 3
+            <input type="radio" name="ed8" value="4" /> 4
+            <input type="radio" name="ed8" value="5" /> 5
+            <input type="radio" name="ed8" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>9. It is hard for me to let people love me:</label><br><br>
+            <input type="radio" name="ed9" value="1" /> 1
+            <input type="radio" name="ed9" value="2" /> 2
+            <input type="radio" name="ed9" value="3" /> 3
+            <input type="radio" name="ed9" value="4" /> 4
+            <input type="radio" name="ed9" value="5" /> 5
+            <input type="radio" name="ed9" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>10. I am lonely a lot of the time:</label><br><br>
+            <input type="radio" name="ed10" value="1" /> 1
+            <input type="radio" name="ed10" value="2" /> 2
+            <input type="radio" name="ed10" value="3" /> 3
+            <input type="radio" name="ed10" value="4" /> 4
+            <input type="radio" name="ed10" value="5" /> 5
+            <input type="radio" name="ed10" value="6" /> 6
+          </div>
+
+    </form>
+    <div class="result" id="emotional-deprivation-result"></div>
+
+     <h2> Defectiveness Core Belief Self-Assessment</h2>
+     <p style="text-align: start; font-size: 1.2em; color: #555;">
+           The defectiveness core belief often rides shotgun with the abandonment core belief. If you feel that you are bad, unworthy, defective, and that if someone saw you for who you really are he or she would find you unlovable and reject you, then it's likely that you have a defectiveness core belief. 
+           <br><br>
+        Rate the following statements using the scale below:
+        <br />
+      </p>
+
+      <p style="text-align: start; font-size: 1.2em; color: #0167ec">
+        1 = completely untrue of me
+        <br />
+        2 = mostly untrue of me
+        <br />
+        3 = slightly more true than untrue of me
+        <br />
+        4 = moderately true of me
+        <br />
+        5 = mostly true of me
+        <br />
+        6 = describes me perfectly
+      </p>
+      <form oninput="calculateDefectivenessScore();">
+        <div class="question">
+          <label>1. No man or woman could love me if he or she really knew me:</label><br><br>
+          <input type="radio" name="df1" value="1" /> 1
+          <input type="radio" name="df1" value="2" /> 2
+          <input type="radio" name="df1" value="3" /> 3
+          <input type="radio" name="df1" value="4" /> 4
+          <input type="radio" name="df1" value="5" /> 5
+          <input type="radio" name="df1" value="6" /> 6
+        </div>
+        <div class="question">
+            <label>2. I am inherently flawed and defective. I am unworthy of love:</label><br><br>
+            <input type="radio" name="df2" value="1" /> 1
+            <input type="radio" name="df2" value="2" /> 2
+            <input type="radio" name="df2" value="3" /> 3
+            <input type="radio" name="df2" value="4" /> 4
+            <input type="radio" name="df2" value="5" /> 5
+            <input type="radio" name="df2" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>3. I have secrets that I do not want to share, even with the people closest to me:</label><br><br>
+            <input type="radio" name="df3" value="1" /> 1
+            <input type="radio" name="df3" value="2" /> 2
+            <input type="radio" name="df3" value="3" /> 3
+            <input type="radio" name="df3" value="4" /> 4
+            <input type="radio" name="df3" value="5" /> 5
+            <input type="radio" name="df3" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>4. It was my fault that my parents could not love me:</label><br><br>
+            <input type="radio" name="df4" value="1" /> 1
+            <input type="radio" name="df4" value="2" /> 2
+            <input type="radio" name="df4" value="3" /> 3
+            <input type="radio" name="df4" value="4" /> 4
+            <input type="radio" name="df4" value="5" /> 5
+            <input type="radio" name="df4" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>5. I hide the real me. The real me is unacceptable. The self I show is a false self:</label><br><br>
+            <input type="radio" name="df5" value="1" /> 1
+            <input type="radio" name="df5" value="2" /> 2
+            <input type="radio" name="df5" value="3" /> 3
+            <input type="radio" name="df5" value="4" /> 4
+            <input type="radio" name="df5" value="5" /> 5
+            <input type="radio" name="df5" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>6. I am often drawn to people—parents, friends, and lovers—who are critical and reject me:</label><br><br>
+            <input type="radio" name="df6" value="1" /> 1
+            <input type="radio" name="df6" value="2" /> 2
+            <input type="radio" name="df6" value="3" /> 3
+            <input type="radio" name="df6" value="4" /> 4
+            <input type="radio" name="df6" value="5" /> 5
+            <input type="radio" name="df6" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>7. I am often critical and rejecting, especially of people who seem to love me:</label><br><br>
+            <input type="radio" name="df7" value="1" /> 1
+            <input type="radio" name="df7" value="2" /> 2
+            <input type="radio" name="df7" value="3" /> 3
+            <input type="radio" name="df7" value="4" /> 4
+            <input type="radio" name="df7" value="5" /> 5
+            <input type="radio" name="df7" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>8. I devalue my positive qualities:</label><br><br>
+            <input type="radio" name="df8" value="1" /> 1
+            <input type="radio" name="df8" value="2" /> 2
+            <input type="radio" name="df8" value="3" /> 3
+            <input type="radio" name="df8" value="4" /> 4
+            <input type="radio" name="df8" value="5" /> 5
+            <input type="radio" name="df8" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>9. I live with a great deal of shame about myself:</label><br><br>
+            <input type="radio" name="df9" value="1" /> 1
+            <input type="radio" name="df9" value="2" /> 2
+            <input type="radio" name="df9" value="3" /> 3
+            <input type="radio" name="df9" value="4" /> 4
+            <input type="radio" name="df9" value="5" /> 5
+            <input type="radio" name="df9" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>10. One of my greatest fears is that my faults will be exposed:</label><br><br>
+            <input type="radio" name="df10" value="1" /> 1
+            <input type="radio" name="df10" value="2" /> 2
+            <input type="radio" name="df10" value="3" /> 3
+            <input type="radio" name="df10" value="4" /> 4
+            <input type="radio" name="df10" value="5" /> 5
+            <input type="radio" name="df10" value="6" /> 6
+          </div>
+    </form>
+    <div class="result" id="defectiveness-result"></div>
+
+    <h2> Failure Core Belief Self-Assessment</h2>
+ <p style="text-align: start; font-size: 1.2em; color: #555;">
+    The failure core belief can be an accomplice to the abandonment core belief. If you feel like you’ve failed, that failure is inevitable, or that you don’t measure up to your peers because you aren’t as smart, talented, or successful, then you probably have a failure core belief. 
+    <br><br>
+    Rate the following statements using the scale below:
+    <br>
+    <p style="text-align: start; font-size: 1.2em; color: #0167ec;">
+        1 = completely untrue of me
+        <br>
+        2 = mostly untrue of me
+        <br>
+        3 = slightly more true than untrue of me
+        <br>
+        4 = moderately true of me
+        <br>
+        5 = mostly true of me
+        <br>
+        6 = describes me perfectly
+    </p>
+    <form oninput="calculateFailureScore();">
+        <div class="question">
+          <label>1. I feel I am less competent than other people in areas of achievement:</label><br><br>
+          <input type="radio" name="fl1" value="1" /> 1
+          <input type="radio" name="fl1" value="2" /> 2
+          <input type="radio" name="fl1" value="3" /> 3
+          <input type="radio" name="fl1" value="4" /> 4
+          <input type="radio" name="fl1" value="5" /> 5
+          <input type="radio" name="fl1" value="6" /> 6
+        </div>
+        <div class="question">
+            <label>2. I feel that I am a failure when it comes to achievement:</label><br><br>
+            <input type="radio" name="fl2" value="1" /> 1
+            <input type="radio" name="fl2" value="2" /> 2
+            <input type="radio" name="fl2" value="3" /> 3
+            <input type="radio" name="fl2" value="4" /> 4
+            <input type="radio" name="fl2" value="5" /> 5
+            <input type="radio" name="fl2" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>3. Most people my age are more successful in their work than I am:</label><br><br>
+            <input type="radio" name="fl3" value="1" /> 1
+            <input type="radio" name="fl3" value="2" /> 2
+            <input type="radio" name="fl3" value="3" /> 3
+            <input type="radio" name="fl3" value="4" /> 4
+            <input type="radio" name="fl3" value="5" /> 5
+            <input type="radio" name="fl3" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>4. I was a failure as a student:</label><br><br>
+            <input type="radio" name="fl4" value="1" /> 1
+            <input type="radio" name="fl4" value="2" /> 2
+            <input type="radio" name="fl4" value="3" /> 3
+            <input type="radio" name="fl4" value="4" /> 4
+            <input type="radio" name="fl4" value="5" /> 5
+            <input type="radio" name="fl4" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>5. I feel I am not as intelligent as most of the people I associate with:</label><br><br>
+            <input type="radio" name="fl5" value="1" /> 1
+            <input type="radio" name="fl5" value="2" /> 2
+            <input type="radio" name="fl5" value="3" /> 3
+            <input type="radio" name="fl5" value="4" /> 4
+            <input type="radio" name="fl5" value="5" /> 5
+            <input type="radio" name="fl5" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>6. I feel humiliated by my failures in the work sphere:</label><br><br>
+            <input type="radio" name="fl6" value="1" /> 1
+            <input type="radio" name="fl6" value="2" /> 2
+            <input type="radio" name="fl6" value="3" /> 3
+            <input type="radio" name="fl6" value="4" /> 4
+            <input type="radio" name="fl6" value="5" /> 5
+            <input type="radio" name="fl6" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>7. I feel embarrassed around other people because I do not measure up in terms of my accomplishments:</label><br><br>
+            <input type="radio" name="fl7" value="1" /> 1
+            <input type="radio" name="fl7" value="2" /> 2
+            <input type="radio" name="fl7" value="3" /> 3
+            <input type="radio" name="fl7" value="4" /> 4
+            <input type="radio" name="fl7" value="5" /> 5
+            <input type="radio" name="fl7" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>8. I often feel that people believe I am more competent than I really am:</label><br><br>
+            <input type="radio" name="fl8" value="1" /> 1
+            <input type="radio" name="fl8" value="2" /> 2
+            <input type="radio" name="fl8" value="3" /> 3
+            <input type="radio" name="fl8" value="4" /> 4
+            <input type="radio" name="fl8" value="5" /> 5
+            <input type="radio" name="fl8" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>9. I feel that I do not have any special talents that really count in life:</label><br><br>
+            <input type="radio" name="fl9" value="1" /> 1
+            <input type="radio" name="fl9" value="2" /> 2
+            <input type="radio" name="fl9" value="3" /> 3
+            <input type="radio" name="fl9" value="4" /> 4
+            <input type="radio" name="fl9" value="5" /> 5
+            <input type="radio" name="fl9" value="6" /> 6
+          </div>
+          <div class="question">
+            <label>10. I am working below my potential:</label><br><br>
+            <input type="radio" name="fl10" value="1" /> 1
+            <input type="radio" name="fl10" value="2" /> 2
+            <input type="radio" name="fl10" value="3" /> 3
+            <input type="radio" name="fl10" value="4" /> 4
+            <input type="radio" name="fl10" value="5" /> 5
+            <input type="radio" name="fl10" value="6" /> 6
+          </div>
+</form>
+<div class="result" id="failure-result"></div><br>
+
+    <!-- Link to the external form -->
+    <div class="link">
+        <p>Now that you have completed the self-assessments, spend a few minutes reviewing your scores.
+            <br> 
+            To do this, you will need the review the total results of each question.
+            <br> 
+            Look at the statements for which you scored 3, 4, 5, and 6. 
+            <br>
+            Then consider the following questions:
+            <br>
+            <p style="text-align: calc(); font-size: 1em; font-style: italic; color: #0c6be9;">
+                1. Do you have memories of specific experiences or events that go with these statements?
+                <br>
+                2. Do you have memories of specific experiences or events that go with these statements?
+                <br>
+                3. Do you remember how you felt then?
+                <br>
+                4. How do you feel now?
+                <br>
+                5. Did the statement that resonated with you make you aware of any patterns in your life?
+                <br>
+                6. Behavioral patterns? Relationship patterns?
+                <br>
+                7. Did any of the results surprise you?
+            <br>
+            </p>
+            Record them in the spaces left for notes by clicking <a href="https://forms.gle/ULLaoyRCBXNkwr3K8" target="_blank">here</a> to access the form for writing your notes.
+            </p>  
+    </div>
+
+  </body>
+</html>
