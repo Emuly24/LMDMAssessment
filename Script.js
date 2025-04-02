@@ -32,7 +32,7 @@ function checkNameAndShowAssessment() {
       messageElement.innerHTML =
         "Thank you Maa, my dear, for your choice in taking this assessment. Please be honest with yourself. Only you will be able to see your results. Be flexible; transcend the past.<br><br>Let the journey begin!";
     } else {
-      messageElement.innerHTML = `Thank you, ${formattedName}, dear, for your choice in taking this assessment. Please be honest with yourself. Only you will be able to see your results. Be flexible; outlive the past.<br><br>Let the journey begin!`;
+      messageElement.innerHTML = `Thank you, ${formattedName}, dear, for your choice in taking this assessment. Be honest with yourself because only you will be able to see your results. Be flexible; outpower the past.<br><br>Enjoy!`;
     }
 
     // Redirect to the assessment page

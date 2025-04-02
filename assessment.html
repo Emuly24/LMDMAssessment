@@ -32,9 +32,9 @@
   >
     WELCOME!
   </h1>
-  <p style="font-size: 1.2em; line-height: 1.2; color: #333">
+  <p style="font-size: 1.2em; line-height: 1.2; color: #f503e1">
         <!-- Dynamic Welcome Message -->
-        <p id="welcome-message" style="font-size: 1.5em; color: #5e6612"></p>
+        <p id="welcome-message" style="font-size: 1.3em; text-align:center; #5e6612"></p>
         <!-- Display personalized message -->
         <h2 style="color: #192eeb">Select the Self-Assessment Exercise</h2>
         <br /><br />
@@ -116,7 +116,7 @@
         if (welcomeMessageElem) {
           if (respondentName.toLowerCase() === "maggie zgambo") {
             welcomeMessageElem.innerHTML =
-              "Thank you Maa, my dear, for your choice in taking this assessment. The exercises contained in the book (go and read first, you haven't, before taking the exercise) are designed to help you get closer to the healthy relationships that you desire.\n You will need to to complete the exercises in this flexible online journal that will track your progress.\nBe honest with yourself.\nPlease know that only you will be able to see your results. \nRelax! No one is watching you; transcend the past.<br><br>Let the journey begin!";
+              "Thank you Maa, my dear, for your choice in taking this assessment. The exercises contained in the book (go and read first, if you haven't read it before taking the exercise) are designed to help you get closer to the healthy relationships that you desire.\n You will need to to complete the exercises in this flexible online journal that will track your progress.\nBe honest with yourself.\nPlease know that only you will be able to see your results. \nRelax! No one is watching you; transcend the past.<br><br>Let the journey begin!";
           } else {
             welcomeMessageElem.innerHTML = `Hi dear ${respondentName}! You have made a right choice by taking this assessment. The exercises contained in the book (go and read first, you haven't, before taking the exercise) are designed to help you get closer to the healthy relationships that you desire.\n You will need to to complete the exercises in this flexible online journal that will track your progress.\nBe honest with yourself.\nPlease know that only you will be able to see your results. \nRelax! No one is watching you; outlive the past.<br><br>Let the journey begin!`;
           }
