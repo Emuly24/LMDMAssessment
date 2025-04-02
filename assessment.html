@@ -34,7 +34,7 @@
   </h1>
   <p style="font-size: 1.2em; line-height: 1.2; color: #f503e1">
         <!-- Dynamic Welcome Message -->
-        <p id="welcome-message" style="font-size: 1.3em; text-align:center; #5e6612"></p>
+        <p id="welcome-message" style="font-size: 1.3em; text-align:center #5e6612"></p>
         <!-- Display personalized message -->
         <h2 style="color: #192eeb">Select the Self-Assessment Exercise</h2>
         <br /><br />
@@ -88,19 +88,37 @@
             text-shadow: #f0dd74;
           "
           >Failure Assessment</a
-        ><br /><br />
-        <a
-          href="conclusion.html"
-          style="
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.8em;
-            color: #db0e86;
-          "
-          >Conclusion</a
+       
         >
+        <a
+        href="index.html"
+      style="
+        text-decoration: none;
+        text-align: right;
+        background-color: #555;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px;
+      "
+      >Previous</a
+    >
+    <a
+      href="abandonment.html"
+      style="
+        text-decoration: none;
+        text-align: left;
+        background-color: #d32f2f;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px;
+      "
+      >Next</a
+  >
       </div>
     </div>
+    
 
     <!-- Script to display the welcome message -->
     <script>
@@ -125,8 +143,7 @@
         }
       });
     </script>
-
-    <!-- Optional: include your main Script.js if it contains additional functionality -->
-    <script src="Script.js"></script>
+  
+  <script src="Script.js"></script>
   </body>
 </html>

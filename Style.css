@@ -6,12 +6,42 @@ body {
   background-color: #f9f9f9; /* Neutral background for better readability */
   color: #333; /* Default text color for better contrast */
 }
+#menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+#menu-button {
+  background-color: #4CAF50; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+#menu-items {
+  display: none; /* Initially hide the menu items */
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  opacity: 0; /* Start transparent */
+  transform: translateY(-10px); /* Start slightly shifted upwards */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#menu-items.show {
+  display: block; /* Make the menu visible */
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset position */
+}
 
 /* Heading styles */
 h1 {
   text-align: center;
   color: #fa072f;
-  font-size: 2.5em;
+  font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 20px;
   text-shadow: #333;
@@ -20,7 +50,7 @@ h1 {
 h2 {
   text-align: center;
   color: #530404;
-  font-size: 2em;
+  font-size: 1.8em;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -29,7 +59,7 @@ h2 {
 img {
   display: block;
   max-width: 400%; 
-  height: 200%; 
+  height: 100%; 
   margin: 20px auto; 
 }
 
@@ -39,6 +69,101 @@ img {
   text-align: start;
   color: #fa0795;
   font-size: 1.6em;
+}
+#contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px;
+}
+/* Style for the container */
+#name-container {
+  width: 50%; /* Reduce the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 10px; /* Add padding inside the container */
+  text-align: center; /* Center the content inside the container */
+  background-color: #f9f9f9; /* Optional: Add a light background color */
+  border: 30px solid #0c6be9; /* Optional: Add a border */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Style for the input field */
+#name-container input[type="text"] {
+  width: 50%;
+  min-height: fit-content; /* Reduce the size of the input field */
+  padding: 8px; /* Adjust padding for a smaller height */
+  font-size: 1em; /* Keep font size manageable */
+  margin: 20px; /* Center the text box */
+  display: block; /* Make sure it stacks properly */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  #name-container {
+      width: 40%; /* Make the container take up more space on small screens */
+      padding: 8px; /* Reduce padding for better fit */
+  }
+
+  #name-container input[type="text"] {
+      width: 100%; /* Make the input field take up full width of the container */
+  }
+}
+
+/* Style for the placeholder text */
+input[type="text"]::placeholder {
+  color: #888; /* Change placeholder text color */
+  font-style: italic; /* Make the text italic for a polished feel */
+  font-size: 0.9em; /* Make the placeholder text smaller */
+  text-align: center; /* Center the placeholder text */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  input[type="text"] {
+      width: 100%; /* Make the input take up the full width on smaller screens */
+      font-size: 0.9em; /* Reduce font size further */
+      padding: 6px; /* Adjust padding */
+  }
+}
+
+/* Style for buttons */
+.home-button {
+  display: inline-block; /* Ensure buttons appear side by side */
+  width: 45%; /* Adjust width so buttons fit nicely */
+  padding: 15px 15px; /* Add padding to buttons */
+  margin: 10px; /* Add space between buttons */
+  text-align: center; /* Center text inside buttons */
+  text-decoration: none; /* Remove underline */
+  background-color: #866909; /* Button color */
+  color: white; /* Text color */
+  border-radius: 30px; /* Add rounded corners */
+  font-size: 1.1em; /* Adjust font size */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for buttons */
+.home-button:hover {
+  background-color: #084ca0; /* Darken button on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Ensure responsive styling for smaller screens */
+@media (max-width: 600px) {
+  input[type="text"] {
+      font-size: 1em; /* Adjust font size for smaller screens */
+      margin-bottom: 15px; /* Reduce margin */
+  }
+  .home-button {
+      width: 100%; /* Make buttons full width */
+      font-size: 1em; /* Adjust font size */
+      padding: 10px; /* Adjust padding */
+  }
 }
 
 /* Result styles */
@@ -51,6 +176,113 @@ img {
   padding: 10px; /* Space inside the result box */
   border-radius: 5px; /* Rounded corners for visual appeal */
 }
+
+/* General container styling */
+#contact-page {
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#contact-photo {
+  width: 300px; /* Set the width of the image */
+  height: auto; /* Keep the aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth scaling effects */
+}
+
+/* Enlarged effect when hovering */
+#contact-photo:hover {
+  transform: scale(1.2); /* Enlarge the image slightly */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Add a more pronounced shadow */
+}
+
+
+/* Box styling for input fields */
+.contact-input {
+  border: 2px solid #4CAF50; /* Green border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  background-color: #f9f9f9; /* Light background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  width: 80%; /* Make it responsive */
+}
+
+
+
+/* General style for the buttons */
+button {
+  display: inline-block; /* Make buttons inline and block-level */
+  width: 200px; /* Width of the button */
+  padding: 15px 15px; /* Add padding for larger buttons */
+  font-size: 1.2em; /* Increase font size */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Text color */
+  background-color: #e90c0c; /* Button background color */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  margin: 10px; /* Add space between buttons */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #084ca0; /* Darken button on hover */
+  transform: scale(1.1); /* Enlarge button slightly on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  button {
+      width: 100%; /* Make buttons full width on smaller screens */
+      font-size: 1em; /* Adjust font size */
+      padding: 10px 15px; /* Adjust padding */
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  color: #e70101;
+}
+a:hover {
+  text-decoration: underline;
+}
+#about-page {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+p {
+  line-height: 1.8;
+  margin: 10px 0;
+  text-align: justify;
+}
+em {
+  font-style: italic;
+}
+strong {
+  color: #4CAF50;
+}
+
 
 /* Link container styles */
 .link {
