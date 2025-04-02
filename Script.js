@@ -173,7 +173,7 @@ function calculateMistrustScore() {
 
 function calculateEmotionalDeprivationScore() {
   const recommendations = {
-    lowHigh: "Although your total score is low, you rated at least one statement as a 5 or 6. If you feel like this core belief is significant though your score is lower than expected, you might consider reflections on feeling less valued or understood during childhood.",
+    lowHigh: "Although your total score is low, you rated at least one statement as a 5 or 6.If you feel like this core belief is significant though your score is lower than expected, you might consider reflections on feeling less valued or understood during childhood.",
     high: "This core belief is significant to your life. Reflect on whether you felt less loved or included compared to others during your upbringing."
   };
   calculateScore("ed", 10, "emotional-deprivation-result", recommendations);
