@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defectiveness</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body style="
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+"
+>
+<div
+  style="
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h1
+    style="
+      text-align: center;
+      color: #002df7;
+      font-size: 2em;
+      margin-bottom: 20px;
+    "
+  >
+      Defectiveness Core Belief Assessment
+    </h1>
+    <p style="text-align: start; font-size: 1.2em; color: #555">
+      The defectiveness core belief often rides shotgun with the abandonment
+      core belief. If you feel that you are bad, unworthy, defective, and that
+      if someone saw you for who you really are he or she would find you
+      unlovable and reject you, then it's likely that you have a defectiveness
+      core belief.
+      <br /><br />
+      Rate the following statements using the scale below:
+      <br />
+    </p>
+
+    <p style="text-align: start; font-size: 1.2em; color: #3f86e2">
+      1 = completely untrue of me
+      <br />
+      2 = mostly untrue of me
+      <br />
+      3 = slightly more true than untrue of me
+      <br />
+      4 = moderately true of me
+      <br />
+      5 = mostly true of me
+      <br />
+      6 = describes me perfectly
+    </p>
+    <form
+      oninput="calculateDefectivenessScore();"
+      style="max-width: 600px; margin: auto"
+    >
+      <div class="question">
+        <label
+          >1. No man or woman could love me if he or she really knew me:</label
+        ><br />
+        <input type="radio" name="df1" value="1" /> 1
+        <input type="radio" name="df1" value="2" /> 2
+        <input type="radio" name="df1" value="3" /> 3
+        <input type="radio" name="df1" value="4" /> 4
+        <input type="radio" name="df1" value="5" /> 5
+        <input type="radio" name="df1" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >2. I am inherently flawed and defective. I am unworthy of
+          love:</label
+        ><br /><br />
+        <input type="radio" name="df2" value="1" /> 1
+        <input type="radio" name="df2" value="2" /> 2
+        <input type="radio" name="df2" value="3" /> 3
+        <input type="radio" name="df2" value="4" /> 4
+        <input type="radio" name="df2" value="5" /> 5
+        <input type="radio" name="df2" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >3. I have secrets that I do not want to share, even with the people
+          closest to me:</label
+        ><br /><br />
+        <input type="radio" name="df3" value="1" /> 1
+        <input type="radio" name="df3" value="2" /> 2
+        <input type="radio" name="df3" value="3" /> 3
+        <input type="radio" name="df3" value="4" /> 4
+        <input type="radio" name="df3" value="5" /> 5
+        <input type="radio" name="df3" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>4. It was my fault that my parents could not love me:</label
+        ><br /><br />
+        <input type="radio" name="df4" value="1" /> 1
+        <input type="radio" name="df4" value="2" /> 2
+        <input type="radio" name="df4" value="3" /> 3
+        <input type="radio" name="df4" value="4" /> 4
+        <input type="radio" name="df4" value="5" /> 5
+        <input type="radio" name="df4" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >5. I hide the real me. The real me is unacceptable. The self I show
+          is a false self:</label
+        ><br /><br />
+        <input type="radio" name="df5" value="1" /> 1
+        <input type="radio" name="df5" value="2" /> 2
+        <input type="radio" name="df5" value="3" /> 3
+        <input type="radio" name="df5" value="4" /> 4
+        <input type="radio" name="df5" value="5" /> 5
+        <input type="radio" name="df5" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >6. I am often drawn to people—parents, friends, and lovers—who are
+          critical and reject me:</label
+        ><br /><br />
+        <input type="radio" name="df6" value="1" /> 1
+        <input type="radio" name="df6" value="2" /> 2
+        <input type="radio" name="df6" value="3" /> 3
+        <input type="radio" name="df6" value="4" /> 4
+        <input type="radio" name="df6" value="5" /> 5
+        <input type="radio" name="df6" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >7. I am often critical and rejecting, especially of people who seem
+          to love me:</label
+        ><br /><br />
+        <input type="radio" name="df7" value="1" /> 1
+        <input type="radio" name="df7" value="2" /> 2
+        <input type="radio" name="df7" value="3" /> 3
+        <input type="radio" name="df7" value="4" /> 4
+        <input type="radio" name="df7" value="5" /> 5
+        <input type="radio" name="df7" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>8. I devalue my positive qualities:</label><br /><br />
+        <input type="radio" name="df8" value="1" /> 1
+        <input type="radio" name="df8" value="2" /> 2
+        <input type="radio" name="df8" value="3" /> 3
+        <input type="radio" name="df8" value="4" /> 4
+        <input type="radio" name="df8" value="5" /> 5
+        <input type="radio" name="df8" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>9. I live with a great deal of shame about myself:</label
+        ><br /><br />
+        <input type="radio" name="df9" value="1" /> 1
+        <input type="radio" name="df9" value="2" /> 2
+        <input type="radio" name="df9" value="3" /> 3
+        <input type="radio" name="df9" value="4" /> 4
+        <input type="radio" name="df9" value="5" /> 5
+        <input type="radio" name="df9" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >10. One of my greatest fears is that my faults will be
+          exposed:</label
+        ><br /><br />
+        <input type="radio" name="df10" value="1" /> 1
+        <input type="radio" name="df10" value="2" /> 2
+        <input type="radio" name="df10" value="3" /> 3
+        <input type="radio" name="df10" value="4" /> 4
+        <input type="radio" name="df10" value="5" /> 5
+        <input type="radio" name="df10" value="6" /> 6
+      </div>
+    </form>
+    <div class="result" id="defectiveness-result"></div>
+
+    <div style="text-align: center; margin-top: 20px">
+      <a href="index.html" style="color: #fbc02d">Home</a>
+    </div>
+    <div style="text-align: center; margin-top: 30px">
+      <!-- Navigation buttons -->
+      <a
+        href="failure.html"
+        style="
+          text-decoration: none;
+          text-align: right;
+          text-align: right;
+          background-color: #555;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Previous</a
+      >
+      <a
+        href="emotional.html"
+        style="
+          text-decoration: none;
+          text-align: left;
+          text-align: left;
+          background-color: #d32f2f;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Next</a
+      >
+    </div>
+    <script src="Script.js"></script>
+  </body>
+</html>

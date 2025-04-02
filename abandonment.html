@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abandonment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+"
+>
+<div
+  style="
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h1
+    style="
+      text-align: center;
+      color: #e90c0c;
+      font-size: 2em;
+      margin-bottom: 20px;
+    "
+  >
+  Abandonment Core Belief Self-Assessment
+  </h1>
+
+    <p style="text-align: start; font-size: 1.5em; color: #555">
+      As discussed in the book, the abandonment core belief is a perceived
+      instability or unreliability of those on whom you relied for support and
+      connection. It involves the belief that the significant person or people
+      in your life will not be able to provide emotional support, connection, or
+      protection because they are emotionally unstable and unpredictable,
+      unreliable or erratically present, and/or will die or abandon you for
+      someone else.
+      <br /><br />
+      Rate the following statements using the scale below:
+      <br />
+    </p>
+
+    <p style="text-align: start; font-size: 1.2em; color: #0167ec">
+      1 = completely untrue of me
+      <br />
+      2 = mostly untrue of me
+      <br />
+      3 = slightly more true than untrue of me
+      <br />
+      4 = moderately true of me
+      <br />
+      5 = mostly true of me
+      <br />
+      6 = describes me perfectly
+    </p>
+    <form
+      oninput="calculateAbandonmentScore();"
+      style="max-width: 600px; margin: auto"
+    >
+      <div class="question">
+        <label
+          >1. I worry a lot that the people I love will die or leave me:</label
+        ><br />
+        <input type="radio" name="ab1" value="1" /> 1
+        <input type="radio" name="ab1" value="2" /> 2
+        <input type="radio" name="ab1" value="3" /> 3
+        <input type="radio" name="ab1" value="4" /> 4
+        <input type="radio" name="ab1" value="5" /> 5
+        <input type="radio" name="ab1" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >2. I cling to people because I am afraid they will leave me</label
+        ><br /><br />
+        <input type="radio" name="ab2" value="1" /> 1
+        <input type="radio" name="ab2" value="2" /> 2
+        <input type="radio" name="ab2" value="3" /> 3
+        <input type="radio" name="ab2" value="4" /> 4
+        <input type="radio" name="ab2" value="5" /> 5
+        <input type="radio" name="ab2" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>3. I do not have a stable base support:</label><br /><br />
+        <input type="radio" name="ab3" value="1" /> 1
+        <input type="radio" name="ab3" value="2" /> 2
+        <input type="radio" name="ab3" value="3" /> 3
+        <input type="radio" name="ab3" value="4" /> 4
+        <input type="radio" name="ab3" value="5" /> 5
+        <input type="radio" name="ab3" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >4. I keep falling in love with the people who cannot be there for me
+          in a committed way:</label
+        ><br /><br /><br />
+        <input type="radio" name="ab4" value="1" /> 1
+        <input type="radio" name="ab4" value="2" /> 2
+        <input type="radio" name="ab4" value="3" /> 3
+        <input type="radio" name="ab4" value="4" /> 4
+        <input type="radio" name="ab4" value="5" /> 5
+        <input type="radio" name="ab4" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>5. People have always come and gone in my life:</label
+        ><br /><br />
+        <input type="radio" name="ab5" value="1" /> 1
+        <input type="radio" name="ab5" value="2" /> 2
+        <input type="radio" name="ab5" value="3" /> 3
+        <input type="radio" name="ab5" value="4" /> 4
+        <input type="radio" name="ab5" value="5" /> 5
+        <input type="radio" name="ab5" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>6. I get desperate when someone I love pulls away:</label
+        ><br /><br />
+        <input type="radio" name="ab6" value="1" /> 1
+        <input type="radio" name="ab6" value="2" /> 2
+        <input type="radio" name="ab6" value="3" /> 3
+        <input type="radio" name="ab6" value="4" /> 4
+        <input type="radio" name="ab6" value="5" /> 5
+        <input type="radio" name="ab6" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >7. I get obsessed with the idea that my lovers will leave me that I
+          drive them away:</label
+        ><br /><br />
+        <input type="radio" name="ab7" value="1" /> 1
+        <input type="radio" name="ab7" value="2" /> 2
+        <input type="radio" name="ab7" value="3" /> 3
+        <input type="radio" name="ab7" value="4" /> 4
+        <input type="radio" name="ab7" value="5" /> 5
+        <input type="radio" name="ab7" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >8. The people closest to me are unpredictable. One minute they are
+          there for me, and the next minute they are gone:</label
+        ><br /><br />
+        <input type="radio" name="ab8" value="1" /> 1
+        <input type="radio" name="ab8" value="2" /> 2
+        <input type="radio" name="ab8" value="3" /> 3
+        <input type="radio" name="ab8" value="4" /> 4
+        <input type="radio" name="ab8" value="5" /> 5
+        <input type="radio" name="ab8" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>9. I need other people too much:</label><br /><br />
+        <input type="radio" name="ab9" value="1" /> 1
+        <input type="radio" name="ab9" value="2" /> 2
+        <input type="radio" name="ab9" value="3" /> 3
+        <input type="radio" name="ab9" value="4" /> 4
+        <input type="radio" name="ab9" value="5" /> 5
+        <input type="radio" name="ab9" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>10. In the end, I will be there alone:</label><br /><br />
+        <input type="radio" name="ab10" value="1" /> 1
+        <input type="radio" name="ab10" value="2" /> 2
+        <input type="radio" name="ab10" value="3" /> 3
+        <input type="radio" name="ab10" value="4" /> 4
+        <input type="radio" name="ab10" value="5" /> 5
+        <input type="radio" name="ab10" value="6" /> 6
+      </div>
+    </form>
+
+    <div
+      class="result"
+      id="abandonment-result"
+      style="text-align: center; margin-top: 20px"
+    ></div>
+
+    <div style="text-align: center; margin-top: 20px">
+      <a href="index.html" style="color: #ff4500">Home</a>
+    </div>
+    <a
+      href="mistrust.html"
+      style="
+        text-decoration: none;
+        text-align: right;
+        background-color: #555;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+      "
+      >Previous</a
+    >
+    <a
+      href="assessment.html"
+      style="
+        text-decoration: none;
+        text-align: left;
+        background-color: #d32f2f;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+      "
+      >Next</a
+    >
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mistrust Core Belief Self-Assessment</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body
+    style="
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    "
+  >
+    <div
+      style="
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1
+        style="
+          text-align: center;
+          color: #009ffc;
+          font-size: 2em;
+          margin-bottom: 20px;
+        "
+      >
+        Mistrust and Abuse Core Belief Self-Assessment
+      </h1>
+      <p style="text-align: start; font-size: 1.2em; color: #555">
+        The mistrust and abuse core belief is one of the four common
+        coconspirators. If you grew up in an environment in which you didn't
+        trust the person or people close to you, you didn't feel safe, and/or
+        you were physically, verbally, emotionally, or sexually abused, then you
+        probably have a mistrust and abuse core belief.
+        <br /><br />
+        Rate the following statements using the scale below:
+        <br />
+      </p>
+
+      <p style="text-align: start; font-size: 1em; color: #ec7201">
+        1 = completely untrue of me
+        <br />
+        2 = mostly untrue of me
+        <br />
+        3 = slightly more true than untrue of me
+        <br />
+        4 = moderately true of me
+        <br />
+        5 = mostly true of me
+        <br />
+        6 = describes me perfectly
+      </p>
+      <form
+        oninput="calculateMistrustScore();"
+        style="max-width: 600px; margin: auto"
+      >
+        <div class="question">
+          <label>1. I expect people to hurt me or use me:</label><br />
+          <input type="radio" name="mq1" value="1" /> 1
+          <input type="radio" name="mq1" value="2" /> 2
+          <input type="radio" name="mq1" value="3" /> 3
+          <input type="radio" name="mq1" value="4" /> 4
+          <input type="radio" name="mq1" value="5" /> 5
+          <input type="radio" name="mq1" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>2. Throughout my life people close to me have abused me:</label
+          ><br /><br />
+          <input type="radio" name="mq2" value="1" /> 1
+          <input type="radio" name="mq2" value="2" /> 2
+          <input type="radio" name="mq2" value="3" /> 3
+          <input type="radio" name="mq2" value="4" /> 4
+          <input type="radio" name="mq2" value="5" /> 5
+          <input type="radio" name="mq2" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >3. It is only a matter of time before the people I love will betray
+            me:</label
+          ><br /><br />
+          <input type="radio" name="mq3" value="1" /> 1
+          <input type="radio" name="mq3" value="2" /> 2
+          <input type="radio" name="mq3" value="3" /> 3
+          <input type="radio" name="mq3" value="4" /> 4
+          <input type="radio" name="mq3" value="5" /> 5
+          <input type="radio" name="mq3" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>4. I have to protect myself and stay on my guard:</label
+          ><br /><br />
+          <input type="radio" name="mq4" value="1" /> 1
+          <input type="radio" name="mq4" value="2" /> 2
+          <input type="radio" name="mq4" value="3" /> 3
+          <input type="radio" name="mq4" value="4" /> 4
+          <input type="radio" name="mq4" value="5" /> 5
+          <input type="radio" name="mq4" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >5. If I am not careful, people will take advantage of me:</label
+          ><br /><br />
+          <input type="radio" name="mq5" value="1" /> 1
+          <input type="radio" name="mq5" value="2" /> 2
+          <input type="radio" name="mq5" value="3" /> 3
+          <input type="radio" name="mq5" value="4" /> 4
+          <input type="radio" name="mq5" value="5" /> 5
+          <input type="radio" name="mq5" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >6. I set up tests for people to see if they are really on my
+            side:</label
+          ><br /><br />
+          <input type="radio" name="mq6" value="1" /> 1
+          <input type="radio" name="mq6" value="2" /> 2
+          <input type="radio" name="mq6" value="3" /> 3
+          <input type="radio" name="mq6" value="4" /> 4
+          <input type="radio" name="mq6" value="5" /> 5
+          <input type="radio" name="mq6" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>7. I try to hurt people before they hurt me:</label
+          ><br /><br />
+          <input type="radio" name="mq7" value="1" /> 1
+          <input type="radio" name="mq7" value="2" /> 2
+          <input type="radio" name="mq7" value="3" /> 3
+          <input type="radio" name="mq7" value="4" /> 4
+          <input type="radio" name="mq7" value="5" /> 5
+          <input type="radio" name="mq7" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >8. I am afraid to let people get close to me because I expect them
+            to hurt me:</label
+          ><br /><br />
+          <input type="radio" name="mq8" value="1" /> 1
+          <input type="radio" name="mq8" value="2" /> 2
+          <input type="radio" name="mq8" value="3" /> 3
+          <input type="radio" name="mq8" value="4" /> 4
+          <input type="radio" name="mq8" value="5" /> 5
+          <input type="radio" name="mq8" value="6" /> 6
+        </div>
+        <div class="question">
+          <label>9. I am angry about what people have done to me:</label
+          ><br /><br />
+          <input type="radio" name="mq9" value="1" /> 1
+          <input type="radio" name="mq9" value="2" /> 2
+          <input type="radio" name="mq9" value="3" /> 3
+          <input type="radio" name="mq9" value="4" /> 4
+          <input type="radio" name="mq9" value="5" /> 5
+          <input type="radio" name="mq9" value="6" /> 6
+        </div>
+        <div class="question">
+          <label
+            >10. I have been physically, verbally, or sexually abused by people
+            I should have been able to trust:</label
+          ><br /><br />
+          <input type="radio" name="mq10" value="1" /> 1
+          <input type="radio" name="mq10" value="2" /> 2
+          <input type="radio" name="mq10" value="3" /> 3
+          <input type="radio" name="mq10" value="4" /> 4
+          <input type="radio" name="mq10" value="5" /> 5
+          <input type="radio" name="mq10" value="6" /> 6
+        </div>
+      </form>
+      <div class="result" id="mistrust-result"></div>
+      <div style="text-align: center; margin-top: 20px">
+        <a href="index.html" style="color: #1e88e5">Home</a>
+      </div>
+      <a
+        href="abandonment.html"
+        style="
+          text-decoration: none;
+          text-align: right;
+          background-color: #555;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Previous</a
+      >
+      <a
+        href="emotional.html"
+        style="
+          text-decoration: none;
+          text-align: left;
+          background-color: #d32f2f;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Next</a
+      >
+    </div>
+    <script src="js/Script.js"></script>
+  </body>
+</html>

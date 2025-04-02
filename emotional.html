@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotional Deprivation Core Belief Assessment</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body style="
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+"
+>
+<div
+  style="
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h1
+    style="
+      text-align: center;
+      color: #ea00ff;
+      font-size: 2em;
+      margin-bottom: 20px;
+    "
+  >
+      Emotional Deprivation Core Belief Assessment
+    </h1>
+    <p style="text-align: start; font-size: 1.6em; color: #7349e7">
+      Emotional deprivation is another partner in crime with the abandonment
+      core belief.
+      <br />
+      If you grew up in an environment where you didn't receive emotional
+      support, attention, affection, guidance, and understanding, then emotional
+      deprivation is probably one of your core beliefs.
+      <br /><br />
+      Rate the following statements using the scale below:
+      <br />
+    </p>
+
+    <p style="text-align: start; font-size: 1.2em; color: #e209ff">
+      1 = completely untrue of me
+      <br />
+      2 = mostly untrue of me
+      <br />
+      3 = slightly more true than untrue of me
+      <br />
+      4 = moderately true of me
+      <br />
+      5 = mostly true of me
+      <br />
+      6 = describes me perfectly
+    </p>
+    <form
+      oninput="calculateEmotionalDeprivationScore();"
+      style="max-width: 600px; margin: auto"
+    >
+      <!-- Include questions from your original code -->
+      <div class="question">
+        <label>1. I need more love than I get:</label><br />
+        <input type="radio" name="ed1" value="1" /> 1
+        <input type="radio" name="ed1" value="2" /> 2
+        <input type="radio" name="ed1" value="3" /> 3
+        <input type="radio" name="ed1" value="4" /> 4
+        <input type="radio" name="ed1" value="5" /> 5
+        <input type="radio" name="ed1" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>2. No one really understands me:</label><br /><br />
+        <input type="radio" name="ed2" value="1" /> 1
+        <input type="radio" name="ed2" value="2" /> 2
+        <input type="radio" name="ed2" value="3" /> 3
+        <input type="radio" name="ed2" value="4" /> 4
+        <input type="radio" name="ed2" value="5" /> 5
+        <input type="radio" name="ed2" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >3. I am often attracted to cold partners who can't meet my
+          needs:</label
+        ><br /><br />
+        <input type="radio" name="ed3" value="1" /> 1
+        <input type="radio" name="ed3" value="2" /> 2
+        <input type="radio" name="ed3" value="3" /> 3
+        <input type="radio" name="ed3" value="4" /> 4
+        <input type="radio" name="ed3" value="5" /> 5
+        <input type="radio" name="ed3" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >4. I feel disconnected, even from the people who are closest to
+          me:</label
+        ><br /><br />
+        <input type="radio" name="ed4" value="1" /> 1
+        <input type="radio" name="ed4" value="2" /> 2
+        <input type="radio" name="ed4" value="3" /> 3
+        <input type="radio" name="ed4" value="4" /> 4
+        <input type="radio" name="ed4" value="5" /> 5
+        <input type="radio" name="ed4" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >5. I have not had one special person I love who wants to share
+          himself with me and cares deeply about what happens to me:</label
+        ><br /><br />
+        <input type="radio" name="ed5" value="1" /> 1
+        <input type="radio" name="ed5" value="2" /> 2
+        <input type="radio" name="ed5" value="3" /> 3
+        <input type="radio" name="ed5" value="4" /> 4
+        <input type="radio" name="ed5" value="5" /> 5
+        <input type="radio" name="ed5" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >6. No one is there to give me warmth, holding, and affection:</label
+        ><br /><br />
+        <input type="radio" name="ed6" value="1" /> 1
+        <input type="radio" name="ed6" value="2" /> 2
+        <input type="radio" name="ed6" value="3" /> 3
+        <input type="radio" name="ed6" value="4" /> 4
+        <input type="radio" name="ed6" value="5" /> 5
+        <input type="radio" name="ed6" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >7. I do not have someone who really listens and i tuned in to my true
+          needs and feelings:</label
+        ><br /><br />
+        <input type="radio" name="ed7" value="1" /> 1
+        <input type="radio" name="ed7" value="2" /> 2
+        <input type="radio" name="ed7" value="3" /> 3
+        <input type="radio" name="ed7" value="4" /> 4
+        <input type="radio" name="ed7" value="5" /> 5
+        <input type="radio" name="ed7" value="6" /> 6
+      </div>
+      <div class="question">
+        <label
+          >8. It is hard for me to let people guide or protect me, even though
+          it is what I want inside:</label
+        ><br /><br />
+        <input type="radio" name="ed8" value="1" /> 1
+        <input type="radio" name="ed8" value="2" /> 2
+        <input type="radio" name="ed8" value="3" /> 3
+        <input type="radio" name="ed8" value="4" /> 4
+        <input type="radio" name="ed8" value="5" /> 5
+        <input type="radio" name="ed8" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>9. It is hard for me to let people love me:</label><br /><br />
+        <input type="radio" name="ed9" value="1" /> 1
+        <input type="radio" name="ed9" value="2" /> 2
+        <input type="radio" name="ed9" value="3" /> 3
+        <input type="radio" name="ed9" value="4" /> 4
+        <input type="radio" name="ed9" value="5" /> 5
+        <input type="radio" name="ed9" value="6" /> 6
+      </div>
+      <div class="question">
+        <label>10. I am lonely a lot of the time:</label><br /><br />
+        <input type="radio" name="ed10" value="1" /> 1
+        <input type="radio" name="ed10" value="2" /> 2
+        <input type="radio" name="ed10" value="3" /> 3
+        <input type="radio" name="ed10" value="4" /> 4
+        <input type="radio" name="ed10" value="5" /> 5
+        <input type="radio" name="ed10" value="6" /> 6
+      </div>
+    </form>
+    <div class="result" id="emotional-deprivation-result"></div>
+    <div style="text-align: center; margin-top: 20px">
+      <a href="index.html" style="color: #43a047">Home</a>
+    </div>
+    <div style="text-align: center; margin-top: 30px">
+      <!-- Navigation buttons -->
+      <a
+        href="defectiveness.html"
+        style="
+          text-decoration: none;
+          text-align: right;
+          background-color: #555;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Previous</a
+      >
+      <a
+        href="mistrust.html"
+        style="
+          text-decoration: none;
+          text-align: left;
+          background-color: #d32f2f;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+        "
+        >Next</a
+      >
+    </div>
+    <script src="Script.js"></script>
+  </body>
+</html>

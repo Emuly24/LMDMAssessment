@@ -1,0 +1,102 @@
+/* General styles for the entire document */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+  background-color: #f9f9f9; /* Neutral background for better readability */
+  color: #333; /* Default text color for better contrast */
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  color: #fa072f;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: #333;
+}
+
+h2 {
+  text-align: center;
+  color: #530404;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Image styles */
+img {
+  display: block;
+  max-width: 400%; 
+  height: 200%; 
+  margin: 20px auto; 
+}
+
+/* Question styles */
+.question {
+  margin-bottom: 30px;
+  text-align: start;
+  color: #fa0795;
+  font-size: 1.6em;
+}
+
+/* Result styles */
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #0066cc;
+  white-space: pre-wrap;
+  border: 1px solid #ddd; /* Adds a subtle border for emphasis */
+  padding: 10px; /* Space inside the result box */
+  border-radius: 5px; /* Rounded corners for visual appeal */
+}
+
+/* Link container styles */
+.link {
+  text-align: start;
+  margin-top: 20px;
+}
+
+/* Individual links */
+.link a {
+  color: #4caf50;
+  text-decoration: none; /* Removes the underline */
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Link hover effect */
+.link a:hover {
+  color: #26a6d8; /* Highlighted color for better interactivity */
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+/* Assessment section */
+#assessment {
+  display: none; /* Hide assessment section by default */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .question {
+    font-size: 1em;
+  }
+
+  .link a {
+    font-size: 1em;
+  }
+
+  img {
+    width: 90%; /* Adjust image size for smaller screens */
+    margin: 10px auto;
+  }
+}

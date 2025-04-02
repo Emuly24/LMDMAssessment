@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body style="
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+"
+>
+<div
+  style="
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  "
+>
+  <h1
+    style="
+      text-align: center;
+      color: #f71202;
+      font-size: 2em;
+      margin-bottom: 20px;
+    "
+  >
+    WELCOME!
+  </h1>
+  <p style="font-size: 1.2em; line-height: 1.2; color: #333">
+        <!-- Dynamic Welcome Message -->
+        <p id="welcome-message" style="font-size: 1.5em; color: #5e6612"></p>
+        <!-- Display personalized message -->
+        <h2 style="color: #192eeb">Select the Self-Assessment Exercise</h2>
+        <br /><br />
+
+        <a
+          href="abandonment.html"
+          style="
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.8em;
+            color: #db0e86;
+          "
+          >Abandonment Assessment</a
+        ><br /><br />
+        <a
+          href="mistrust.html"
+          style="
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.8em;
+            color: #db0e86;
+          "
+          >Mistrust Assessment</a
+        ><br /><br />
+        <a
+          href="emotional.html"
+          style="
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.8em;
+            color: #db0e86;
+          "
+          >Emotional Deprivation Assessment</a
+        ><br /><br />
+        <a
+          href="defectiveness.html"
+          style="
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.8em;
+            color: #db0e86;
+          "
+          >Defectiveness Assessment</a
+        ><br /><br />
+        <a
+          href="failure.html"
+          style="
+            text-decoration: none;
+            font-size: 1.8em;
+            color: #db0e86;
+            text-shadow: #f0dd74;
+          "
+          >Failure Assessment</a
+        ><br /><br />
+        <a
+          href="conclusion.html"
+          style="
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.8em;
+            color: #db0e86;
+          "
+          >Conclusion</a
+        >
+      </div>
+    </div>
+
+    <!-- Script to display the welcome message -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Retrieve the respondent's name from localStorage (default to "Guest" if not found).
+        const respondentName =
+          localStorage.getItem("respondentName") || "Guest";
+
+        // Get the welcome message element.
+        const welcomeMessageElem = document.getElementById("welcome-message");
+
+        // Update the welcome message dynamically.
+        if (welcomeMessageElem) {
+          if (respondentName.toLowerCase() === "maggie zgambo") {
+            welcomeMessageElem.innerHTML =
+              "Thank you Maa, my dear, for your choice in taking this assessment. The exercises contained in the book (go and read first, you haven't, before taking the exercise) are designed to help you get closer to the healthy relationships that you desire.\n You will need to to complete the exercises in this flexible online journal that will track your progress.\nBe honest with yourself.\nPlease know that only you will be able to see your results. \nRelax! No one is watching you; transcend the past.<br><br>Let the journey begin!";
+          } else {
+            welcomeMessageElem.innerHTML = `Hi dear ${respondentName}! You have made a right choice by taking this assessment. The exercises contained in the book (go and read first, you haven't, before taking the exercise) are designed to help you get closer to the healthy relationships that you desire.\n You will need to to complete the exercises in this flexible online journal that will track your progress.\nBe honest with yourself.\nPlease know that only you will be able to see your results. \nRelax! No one is watching you; outlive the past.<br><br>Let the journey begin!`;
+          }
+        } else {
+          console.warn("Welcome message element not found.");
+        }
+      });
+    </script>
+
+    <!-- Optional: include your main Script.js if it contains additional functionality -->
+    <script src="Script.js"></script>
+  </body>
+</html>
